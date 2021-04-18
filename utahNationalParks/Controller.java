@@ -1,9 +1,7 @@
-package sample;
+package utahNationalParks;
 
 import javafx.event.ActionEvent;
 import javafx.scene.input.MouseEvent;
-import javafx.fxml.FXML;
-import javafx.scene.control.Label;
 import javafx.scene.control.MenuButton;
 
 public class Controller {
