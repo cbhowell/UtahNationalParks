@@ -9,6 +9,11 @@ import edu.princeton.cs.algs4.*;
  * shortest path between two vertices. In this particular implementation, the verbose output describes the distances
  * or shortest path between National Parks in Utah.
  *
+ * //TODO Make a bigger graph so it can handle path to 0 to 1 and path 1 to 0 equally. As it stands the graph is only one way
+ * //TODO we will probably need to depict every connection in the .txt file
+ *
+ * //TODO: what if we used an edge weighted DIGraph. Is this the purpose of a digraph?
+ *
  */
 public class GraphFunctions {
     private final ST<Integer, String> st;
@@ -30,15 +35,21 @@ public class GraphFunctions {
     public static void main(String[] args) {
 
         //Testing
-        int start = 1;
-        int dest = 2;
-        GraphFunctions gf = new GraphFunctions();
-        System.out.println("Distance from " + start + " to " + dest + ": " + gf.distanceTo(start, dest) + " miles");
-        System.out.println("Distance Verbose: " + gf.distanceVerbose(start, dest));
-        System.out.println();
-        System.out.println("Get Path Verbose: " + gf.getPathVerbose(start, dest));
+       int start = 1;
+        int dest = 0;
 
 
+        for(int i = 0; i < 40; i++) {
+            start = StdRandom.uniform(5);
+            dest = StdRandom.uniform(5);
+            System.out.println("Start: " + start + " Destination: " + dest);
+
+            GraphFunctions gf = new GraphFunctions();
+            System.out.println("Distance from " + start + " to " + dest + ": " + gf.distanceTo(start, dest) + " miles");
+            System.out.println("Distance Verbose: " + gf.distanceVerbose(start, dest));
+            System.out.println("Get Path Verbose: " + gf.getPathVerbose(start, dest));
+            System.out.println("*********************************************");
+        }
     }
 
 
@@ -68,10 +79,10 @@ public class GraphFunctions {
             s1 = q.dequeue();
             c1 = s1.charAt(0);
             c2 = s1.charAt(3);
-            sb.append(st.get(Character.getNumericValue(c1))).append(" to ")
+            sb.append(st.get(Character.getNumericValue(c1))).append("    -->    ")
                     .append(st.get(Character.getNumericValue(c2))).append(" ")
-                    .append((int) distanceTo(Character.getNumericValue(c1), Character.getNumericValue(c2)))
-                    .append(" miles");
+                    .append( "(" + (int) distanceTo(Character.getNumericValue(c1), Character.getNumericValue(c2)))
+                    .append(" miles )");
             sb.append("\n");
         }
         return sb;
@@ -108,7 +119,7 @@ public class GraphFunctions {
      */
     public StringBuilder distanceVerbose(int start, int dest) {
         StringBuilder sb = new StringBuilder();
-        sb.append(st.get(start)).append(" to ").append(st.get(dest)).append(" ").append(distanceTo(start, dest)).append(" miles");
+        sb.append(st.get(start)).append("    -->    ").append(st.get(dest)).append(" (").append(distanceTo(start, dest)).append(" miles)");
         return sb;
     }
 
