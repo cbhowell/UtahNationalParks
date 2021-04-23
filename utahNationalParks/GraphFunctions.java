@@ -9,11 +9,6 @@ import edu.princeton.cs.algs4.*;
  * shortest path between two vertices. In this particular implementation, the verbose output describes the distances
  * or shortest path between National Parks in Utah.
  *
- * //TODO Make a bigger graph so it can handle path to 0 to 1 and path 1 to 0 equally. As it stands the graph is only one way
- * //TODO we will probably need to depict every connection in the .txt file
- *
- * //TODO: what if we used an edge weighted DIGraph. Is this the purpose of a digraph?
- *
  */
 public class GraphFunctions {
     private final ST<Integer, String> st;
@@ -35,8 +30,8 @@ public class GraphFunctions {
     public static void main(String[] args) {
 
         //Testing
-       int start = 1;
-        int dest = 0;
+       int start;
+        int dest;
 
 
         for(int i = 0; i < 40; i++) {
@@ -80,8 +75,7 @@ public class GraphFunctions {
             c1 = s1.charAt(0);
             c2 = s1.charAt(3);
             sb.append(st.get(Character.getNumericValue(c1))).append("    -->    ")
-                    .append(st.get(Character.getNumericValue(c2))).append(" ")
-                    .append( "(" + (int) distanceTo(Character.getNumericValue(c1), Character.getNumericValue(c2)))
+                    .append(st.get(Character.getNumericValue(c2))).append(" ").append("(").append((int) distanceTo(Character.getNumericValue(c1), Character.getNumericValue(c2)))
                     .append(" miles )");
             sb.append("\n");
         }

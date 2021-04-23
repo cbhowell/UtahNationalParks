@@ -1,14 +1,7 @@
 package utahNationalParks;
 
-import javafx.event.ActionEvent;
-import javafx.fxml.FXML;
 import javafx.scene.control.Label;
-import javafx.scene.input.MouseEvent;
 import javafx.scene.control.MenuButton;
-import utahNationalParks.GraphFunctions;
-
-
-import javax.print.attribute.standard.Destination;
 
 /**
  * Controller class the controls the functionality of the GUI buttons
@@ -27,7 +20,6 @@ public class Controller {
     /**
      * Control Functionality for item selected
      *
-     * @param
      */
     public void startArchesSelected() {
         start = 0;
@@ -40,9 +32,8 @@ public class Controller {
     /**
      * Control Functionality for item selected
      *
-     * @param actionEvent
      */
-    public void startBryceSelected(ActionEvent actionEvent) {
+    public void startBryceSelected() {
         start = 1;
         startMenuBTN.setText("Bryce");
         System.out.println("Bryce Selected");
@@ -51,9 +42,8 @@ public class Controller {
     /**
      * Control Functionality for item selected
      *
-     * @param actionEvent
      */
-    public void startCanyonLandsSelected(ActionEvent actionEvent) {
+    public void startCanyonLandsSelected() {
         start = 2;
         startMenuBTN.setText("Canyonlands");
         System.out.println("Canyonlands Selected");
@@ -62,9 +52,8 @@ public class Controller {
     /**
      * Control Functionality for item selected
      *
-     * @param actionEvent
      */
-    public void startCapitolReefSelected(ActionEvent actionEvent) {
+    public void startCapitolReefSelected() {
         start = 3;
         startMenuBTN.setText("Capitol Reef");
         System.out.println("Capitol Reef Selected");
@@ -73,9 +62,8 @@ public class Controller {
     /**
      * Control Functionality for item selected
      *
-     * @param actionEvent
      */
-    public void startZionSelected(ActionEvent actionEvent) {
+    public void startZionSelected() {
         start = 4;
         startMenuBTN.setText("Zion");
         System.out.println("Zion Selected");
@@ -84,9 +72,8 @@ public class Controller {
     /**
      * Control Functionality for item selected
      *
-     * @param actionEvent
      */
-    public void destArchesSelected(ActionEvent actionEvent) {
+    public void destArchesSelected() {
         dest = 0;
         destMenuBTN.setText("Arches");
         System.out.println("Dest Arches Selected");
@@ -95,9 +82,8 @@ public class Controller {
     /**
      * Control Functionality for item selected
      *
-     * @param actionEvent
      */
-    public void destBryceSelected(ActionEvent actionEvent) {
+    public void destBryceSelected() {
         dest = 1;
 
 
@@ -108,9 +94,8 @@ public class Controller {
     /**
      * Control Functionality for item selected
      *
-     * @param actionEvent
      */
-    public void destCanyonLandsSelected(ActionEvent actionEvent) {
+    public void destCanyonLandsSelected() {
         dest = 2;
 
         destMenuBTN.setText("Canyonlands");
@@ -120,9 +105,8 @@ public class Controller {
     /**
      * Control Functionality for item selected
      *
-     * @param actionEvent
      */
-    public void destCapitolReefSelected(ActionEvent actionEvent) {
+    public void destCapitolReefSelected() {
         dest = 3;
         destMenuBTN.setText("Capitol Reef");
         System.out.println("Dest Capitol Reef Selected");
@@ -131,9 +115,8 @@ public class Controller {
     /**
      * Control Functionality for item selected
      *
-     * @param actionEvent
      */
-    public void destZionSelected(ActionEvent actionEvent) {
+    public void destZionSelected() {
         dest = 4;
         destMenuBTN.setText("Zion");
         System.out.println("Dest Zion selected");
@@ -142,7 +125,7 @@ public class Controller {
     /**
      * Control Functionality for item selected
      */
-    public void submit(MouseEvent mouseEvent) {
+    public void submit() {
         System.out.println("Start Button text: " + startMenuBTN.getText());
         System.out.println("Destination Button text: " + destMenuBTN.getText());
         GraphFunctions gf = new GraphFunctions();
@@ -155,15 +138,15 @@ public class Controller {
     /**
      * Control Functionality for item selected
      */
-    public void reset(MouseEvent mouseEvent) {
+    public void reset() {
         start = 0;
         dest = 0;
         System.out.println("Reset button pressed");
 
-        displayLabel.setText("***");
+        displayLabel.setText("");
         startMenuBTN.setText("Start Location");
         destMenuBTN.setText("Destination");
-        distanceDisplay.setText("***");
+        distanceDisplay.setText("");
 
     }
 
