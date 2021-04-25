@@ -63,7 +63,6 @@
                <Font size="17.0" />
             </font>
          </Label>
-         <Pane fx:id="pane_1" layoutX="24.0" layoutY="200.0" prefHeight="350.0" prefWidth="327.0" />
          <effect>
             <Glow />
          </effect>

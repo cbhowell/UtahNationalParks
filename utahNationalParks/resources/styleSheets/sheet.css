@@ -1,4 +1,5 @@
 
 #bgPane{
--fx-background-color: linear-gradient(#2A5058, #61a2b1);
+    -fx-background-image: url("/utahNationalParks/resources/images/nationalParksImg.png");
+    -fx-opacity: 1;
 }

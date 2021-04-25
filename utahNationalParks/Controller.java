@@ -3,9 +3,12 @@ package utahNationalParks;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.MenuButton;
+import javafx.scene.image.Image;
 import javafx.scene.layout.Pane;
 
 import javax.swing.text.html.ImageView;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 
 /**
  * Controller class the controls the functionality of the GUI buttons
@@ -22,13 +25,18 @@ public class Controller {
     private int dest;
 
 
+    @FXML public Label imgLbl_1;
+
+
+
+
     /**
      * Control Functionality for item selected
      *
      */
-    public void startArchesSelected() {
+    public void startArchesSelected() throws FileNotFoundException {
 
-        //pane_1.
+
 
 
         start = 0;
