@@ -6,7 +6,7 @@ import edu.princeton.cs.algs4.*;
  * Represents a graph function class that performs various operations an edge weighted graph. This class can
  * return the distance between two vertices, the path shortest path between two vertices. This class can also
  * display a verbose description of the distance between two vertices, as well as a verbose description of the
- * shortest path between two vertices. In this particular implementation, the verbose output describes the distances
+ * shortest path between two vertices. In this particular implementation the verbose output describes the distances
  * or shortest path between National Parks in Utah.
  *
  */
