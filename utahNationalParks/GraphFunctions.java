@@ -15,7 +15,7 @@ public class GraphFunctions {
     private final EdgeWeightedDigraph g;
 
     GraphFunctions() {
-        In in = new In("/Users/condiehowell/IdeaProjects/UtahNationalParks/src/utahNationalParks/K5Graph.txt");
+        In in = new In("src/utahNationalParks/resources/graphs/K5Graph.txt");
         g = new EdgeWeightedDigraph(in);
         st = new ST<>();
 

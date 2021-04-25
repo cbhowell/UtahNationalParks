@@ -1,7 +1,11 @@
 package utahNationalParks;
 
+import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.MenuButton;
+import javafx.scene.layout.Pane;
+
+import javax.swing.text.html.ImageView;
 
 /**
  * Controller class the controls the functionality of the GUI buttons
@@ -13,6 +17,7 @@ public class Controller {
     public MenuButton destMenuBTN;
     public Label distanceDisplay;
     public Label displayLabel;
+   // @FXML public Pane pane_1;
     private int start;
     private int dest;
 
@@ -22,6 +27,10 @@ public class Controller {
      *
      */
     public void startArchesSelected() {
+
+        //pane_1.
+
+
         start = 0;
         startMenuBTN.setText("Arches");
 
