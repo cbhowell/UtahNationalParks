@@ -5,8 +5,8 @@ import javafx.scene.control.MenuButton;
 import javafx.scene.layout.Pane;
 
 /**
- * Controller class the controls the functionality of the GUI buttons
- * Condie Howell
+ * Represents a controller class that controls the functionality of the overall program when items are
+ * selected or buttons are pushed.
  */
 public class Controller {
 
@@ -22,133 +22,118 @@ public class Controller {
 
     /**
      * Control Functionality for item selected
-     *
      */
     public void startArchesSelected() {
-
-
 
 
         start = 0;
         startMenuBTN.setText("Arches");
 
-        System.out.println("Arches selected");
+        //System.out.println("Arches selected");
     }
 
 
     /**
      * Control Functionality for item selected
-     *
      */
     public void startBryceSelected() {
         start = 1;
         startMenuBTN.setText("Bryce");
-        System.out.println("Bryce Selected");
+        //System.out.println("Bryce Selected");
     }
 
     /**
      * Control Functionality for item selected
-     *
      */
     public void startCanyonLandsSelected() {
         start = 2;
         startMenuBTN.setText("Canyonlands");
-        System.out.println("Canyonlands Selected");
+        //System.out.println("Canyonlands Selected");
     }
 
     /**
      * Control Functionality for item selected
-     *
      */
     public void startCapitolReefSelected() {
         start = 3;
         startMenuBTN.setText("Capitol Reef");
-        System.out.println("Capitol Reef Selected");
+        //System.out.println("Capitol Reef Selected");
     }
 
     /**
      * Control Functionality for item selected
-     *
      */
     public void startZionSelected() {
         start = 4;
         startMenuBTN.setText("Zion");
-        System.out.println("Zion Selected");
+        //System.out.println("Zion Selected");
     }
 
     /**
      * Control Functionality for item selected
-     *
      */
     public void destArchesSelected() {
         dest = 0;
         destMenuBTN.setText("Arches");
-        System.out.println("Dest Arches Selected");
+        //System.out.println("Dest Arches Selected");
     }
 
     /**
      * Control Functionality for item selected
-     *
      */
     public void destBryceSelected() {
         dest = 1;
-
-
         destMenuBTN.setText("Bryce");
-        System.out.println("Dest Bryce selected");
+        //System.out.println("Dest Bryce selected");
     }
 
     /**
      * Control Functionality for item selected
-     *
      */
     public void destCanyonLandsSelected() {
         dest = 2;
-
         destMenuBTN.setText("Canyonlands");
-        System.out.println("Dest Canyon Lands selected");
+        //System.out.println("Dest Canyon Lands selected");
     }
 
     /**
      * Control Functionality for item selected
-     *
      */
     public void destCapitolReefSelected() {
         dest = 3;
         destMenuBTN.setText("Capitol Reef");
-        System.out.println("Dest Capitol Reef Selected");
+        //System.out.println("Dest Capitol Reef Selected");
     }
 
     /**
      * Control Functionality for item selected
-     *
      */
     public void destZionSelected() {
         dest = 4;
         destMenuBTN.setText("Zion");
-        System.out.println("Dest Zion selected");
+        //System.out.println("Dest Zion selected");
     }
 
     /**
-     * Control Functionality for item selected
+     * Control Functionality for submit button
      */
     public void submit() {
-        System.out.println("Start Button text: " + startMenuBTN.getText());
-        System.out.println("Destination Button text: " + destMenuBTN.getText());
+        //System.out.println("Start Button text: " + startMenuBTN.getText());
+        //System.out.println("Destination Button text: " + destMenuBTN.getText());
         GraphFunctions gf = new GraphFunctions();
         displayLabel.setText(gf.getPathVerbose(start, dest).toString());
         //String s1 = Double.toString(gf.distanceTo(start, dest)) ;
         distanceDisplay.setText("Total Distance: " + (int) gf.distanceTo(start, dest) + " miles");
-        System.out.println("Submit button pressed");
+        //System.out.println("Submit button pressed");
     }
 
     /**
-     * Control Functionality for item selected
+     * Control Functionality for reset button
      */
     public void reset() {
         start = 0;
         dest = 0;
-        System.out.println("Reset button pressed");
+        //System.out.println("Reset button pressed");
 
         displayLabel.setText("");
         startMenuBTN.setText("Start Location");

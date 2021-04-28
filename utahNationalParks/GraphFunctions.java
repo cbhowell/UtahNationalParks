@@ -8,28 +8,23 @@ import edu.princeton.cs.algs4.*;
  * display a verbose description of the distance between two vertices, as well as a verbose description of the
  * shortest path between two vertices. In this particular implementation the verbose output describes the distances
  * or shortest path between National Parks in Utah.
- *
  */
 public class GraphFunctions {
+
     private final ST<Integer, String> st;
     private final EdgeWeightedDigraph g;
 
 
     GraphFunctions() {
         In in = new In("src/utahNationalParks/resources/graphs/K5Graph2.txt");
-
-
         g = new EdgeWeightedDigraph(in);
-
         st = new ST<>();
-
         st.put(0, "Arches National Park");
         st.put(1, "Bryce National Park");
         st.put(2, "Canyonlands National Park");
         st.put(3, "Capitol Reef National Park");
         st.put(4, "Zion National Park");
     }
-
 
 
     /**
@@ -49,7 +44,7 @@ public class GraphFunctions {
         String s1;
         char c1, c2;
 
-       // pathTo(start, dest).forEach(e -> q.enqueue(e.toString()));
+        // pathTo(start, dest).forEach(e -> q.enqueue(e.toString()));
         pathTo(start, dest).forEach(e -> q.enqueue(e.toString()));
 
         for (String ignored : q) {
@@ -66,14 +61,13 @@ public class GraphFunctions {
     }
 
 
-
-
     /**
      * Private helper method that returns the shortest path between two national parks. This method uses Dijkstra's
      * shortest path algorithm.
+     * <p>
+     * //* @param start an int value representing the starting location
      *
-     //* @param start an int value representing the starting location
-     * @param dest  an int value representing the destination location
+     * @param dest an int value representing the destination location
      * @return an iterable comprising the shortest path
      */
     private Iterable<DirectedEdge> pathTo(int start, int dest) {
@@ -81,9 +75,6 @@ public class GraphFunctions {
         //DijkstraUndirectedSP sp = new DijkstraUndirectedSP(g, dest);
         return sp.pathTo(dest);
     }
-
-
-
 
 
     /**
@@ -102,9 +93,6 @@ public class GraphFunctions {
     }
 
 
-
-
-
     /**
      * This method returns the distance between two national parks. The national parks are represented by int values
      * between 0 to 4 inclusive. This method accepts an int value representing the starting location, and another
@@ -119,7 +107,6 @@ public class GraphFunctions {
         DijkstraSP sp = new DijkstraSP(g, start);
         return sp.distTo(dest);
     }
-
 
 
 }
