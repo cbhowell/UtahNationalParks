@@ -14,9 +14,13 @@ public class GraphFunctions {
     private final ST<Integer, String> st;
     private final EdgeWeightedDigraph g;
 
+
     GraphFunctions() {
-        In in = new In("src/utahNationalParks/resources/graphs/K5Graph.txt");
+        In in = new In("src/utahNationalParks/resources/graphs/K5Graph2.txt");
+
+
         g = new EdgeWeightedDigraph(in);
+
         st = new ST<>();
 
         st.put(0, "Arches National Park");
@@ -25,29 +29,6 @@ public class GraphFunctions {
         st.put(3, "Capitol Reef National Park");
         st.put(4, "Zion National Park");
     }
-
-
-    public static void main(String[] args) {
-
-        //Testing
-       int start;
-        int dest;
-
-
-        for(int i = 0; i < 40; i++) {
-            start = StdRandom.uniform(5);
-            dest = StdRandom.uniform(5);
-            System.out.println("Start: " + start + " Destination: " + dest);
-
-            GraphFunctions gf = new GraphFunctions();
-            System.out.println("Distance from " + start + " to " + dest + ": " + gf.distanceTo(start, dest) + " miles");
-            System.out.println("Distance Verbose: " + gf.distanceVerbose(start, dest));
-            System.out.println("Get Path Verbose: " + gf.getPathVerbose(start, dest));
-            System.out.println("*********************************************");
-        }
-    }
-
-
 
 
 
@@ -68,6 +49,7 @@ public class GraphFunctions {
         String s1;
         char c1, c2;
 
+       // pathTo(start, dest).forEach(e -> q.enqueue(e.toString()));
         pathTo(start, dest).forEach(e -> q.enqueue(e.toString()));
 
         for (String ignored : q) {
@@ -79,9 +61,9 @@ public class GraphFunctions {
                     .append(" miles )");
             sb.append("\n");
         }
+        //System.out.println("SB: " + sb);
         return sb;
     }
-
 
 
 
@@ -90,12 +72,13 @@ public class GraphFunctions {
      * Private helper method that returns the shortest path between two national parks. This method uses Dijkstra's
      * shortest path algorithm.
      *
-     * @param start an int value representing the starting location
+     //* @param start an int value representing the starting location
      * @param dest  an int value representing the destination location
      * @return an iterable comprising the shortest path
      */
     private Iterable<DirectedEdge> pathTo(int start, int dest) {
         DijkstraSP sp = new DijkstraSP(g, start);
+        //DijkstraUndirectedSP sp = new DijkstraUndirectedSP(g, dest);
         return sp.pathTo(dest);
     }
 
@@ -111,6 +94,7 @@ public class GraphFunctions {
      * @param dest  an int value representing the destination location
      * @return a <code>StringBuilder</code> containing the verbose phrase describing the distance between two national parks.
      */
+    @SuppressWarnings("unused")
     public StringBuilder distanceVerbose(int start, int dest) {
         StringBuilder sb = new StringBuilder();
         sb.append(st.get(start)).append("    -->    ").append(st.get(dest)).append(" (").append(distanceTo(start, dest)).append(" miles)");
@@ -135,5 +119,8 @@ public class GraphFunctions {
         DijkstraSP sp = new DijkstraSP(g, start);
         return sp.distTo(dest);
     }
+
+
+
 }
 
